@@ -1,0 +1,10 @@
+[
+    {"id":1,"name":"boat","image":"../../public/assets/boat.jpg"},
+    {"id":2,"name":"dragon","image":"../../public/assets/dragon.jpg"},
+    {"id":3,"name":"dwarf","image":"../../public/assets/dwarf.jpg"},
+    {"id":4,"name":"flower","image":"../../public/assets/flower.jpg"},
+    {"id":5,"name":"girl","image":"../../public/assets/girl.jpg"},
+    {"id":6,"name":"hat","image":"../../public/assets/hat.jpg"},
+    {"id":7,"name":"pumpkin","image":"../../public/assets/pumpkin.jpg"},
+    {"id":8,"name":"sun","image":"../../public/assets/sun.jpg"}
+]
