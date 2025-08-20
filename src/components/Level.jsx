@@ -8,7 +8,7 @@ import HomeButton from "./HomeButton";
 
 
 function Level() {
-  const { level1Enabled, level2Enabled, level3Enabled, setLevel1Enabled, setLevel2Enabled, setLevel3Enabled } = useContext(LevelProvider);
+  const { levelsEnabled } = useContext(LevelProvider);
 
   const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ function Level() {
     <>
         <div className="level-page">
           <h1>Levels</h1>
-
           <div className="levels-desc">
             <div>
               <p>
@@ -35,37 +34,19 @@ function Level() {
                 </b>
               </p>
             </div>
-            <table className="levels-about">
-              <tbody>
-              <tr>
-                <td>
-                  <b>Level 1</b>
-                </td>
-                <td>: Start easy and get familiar with the game.</td>
-              </tr>
-              <tr>
-                <td>
-                  <b>Level 2</b>
-                </td>
-                <td>: More cards, slightly harder!</td>
-              </tr>
-              <tr>
-                <td>
-                  <b>Level 3</b>
-                </td>
-                <td>: The ultimate challenge!</td>
-              </tr>
-              </tbody>
-            </table>
+            
 
             <p>Click on a level box to start playing that level. Good luck!</p>
           </div>
 
           {/*========= Level Buttons ===========*/}
           <div className="level-buttons">
-            <button disabled={!level1Enabled} onClick={() => startLevel(1)}>Level 1</button>
-            <button disabled={!level2Enabled} onClick={() => startLevel(2)}>Level 2</button>
-            <button disabled={!level3Enabled} onClick={() => startLevel(3)}>Level 3</button>
+            <button disabled={!levelsEnabled[0]} onClick={() => startLevel(1)}>1</button>
+            <button disabled={!levelsEnabled[1]} onClick={() => startLevel(2)}>2</button>
+            <button disabled={!levelsEnabled[2]} onClick={() => startLevel(3)}>3</button>
+            <button disabled={!levelsEnabled[3]} onClick={() => startLevel(4)}>4</button>
+            <button disabled={!levelsEnabled[4]} onClick={() => startLevel(5)}>5</button>
+            <button disabled={!levelsEnabled[5]} onClick={() => startLevel(6)}>6</button>
           </div>
 
           <HomeButton/>

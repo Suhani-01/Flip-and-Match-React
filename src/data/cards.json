@@ -6,5 +6,9 @@
     {"id":5,"name":"girl","image":"/assets/girl.jpg"},
     {"id":6,"name":"hat","image":"/assets/hat.jpg"},
     {"id":7,"name":"pumpkin","image":"/assets/pumpkin.jpg"},
-    {"id":8,"name":"sun","image":"/assets/sun.jpg"}
+    {"id":8,"name":"sun","image":"/assets/sun.jpg"},
+    {"id":9,"name":"bird","image":"/assets/bird.png"},
+    {"id":10,"name":"pastery","image":"/assets/pastery.png"},
+    {"id":11,"name":"moon","image":"/assets/moon.png"},
+    {"id":12,"name":"panda","image":"/assets/panda.png"}
 ]

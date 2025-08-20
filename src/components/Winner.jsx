@@ -2,22 +2,27 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { LevelProvider } from "../App";
 
-function Winner({ time, flips, levelNumber }) {
-  const { setLevel2Enabled, setLevel3Enabled } = useContext(LevelProvider);
+function Winner({ time, flips, levelNumber ,restart}) {
+  const { setLevelsEnabled } = useContext(LevelProvider);
   const navigate = useNavigate();
 
-  function openLevelPage(){
-    navigate('/levels')
+  function exit() {
+    navigate("/");
   }
 
   useEffect(() => {
     console.log("I am Inside useeffect to update level");
-    if (levelNumber + 1 === 2) setLevel2Enabled(true);
-    else if (levelNumber + 1 === 3) setLevel3Enabled(true);
+    if (levelNumber != 6) {
+      setLevelsEnabled((prev) => {
+        const newLevels = [...prev]; //copied the state of level enabled
+        newLevels[levelNumber] = true;
+        return newLevels;
+      });
+    }
   }, []);
 
   function updateLevel() {
-    if (levelNumber == 3) return;
+    if (levelNumber == 6) return;
     console.log(levelNumber + 1);
     navigate("/levels/play", { state: { levelNumber: levelNumber + 1 } });
   }
@@ -25,7 +30,7 @@ function Winner({ time, flips, levelNumber }) {
   return (
     <div className="winner-winner">
       <div className="winner-overlay">
-        {levelNumber===3? <h2>Winner...!👑</h2> : <h2>VICTORY...!</h2>}
+        {levelNumber === 6 ? <h2>Winner...!👑</h2> : <h2>VICTORY...!</h2>}
         <h4>Level {levelNumber} Completed</h4>
 
         <div className="time-flips">
@@ -38,18 +43,22 @@ function Winner({ time, flips, levelNumber }) {
         </div>
         <br />
 
-        {levelNumber!==3 && <p>Lets Move to The next Level</p>}
+        {levelNumber !== 6 && <p>Lets Move to The next Level</p>}
 
         <div className="button-container">
-          <button className="choose-level" onClick={openLevelPage}>
-            Choose Level
+          <button className="exit" onClick={exit}>
+            Exit
           </button>
 
+          {levelNumber !== 6 && (
+            <button className="next-level" onClick={updateLevel}>
+              Next Level
+            </button>
+          )}
 
-          {levelNumber!==3 && <button className="next-level" onClick={updateLevel}>
-            Next Level
-          </button>}
-          
+          <button className="replay" onClick={restart}>
+            Replay
+          </button>
         </div>
       </div>
     </div>

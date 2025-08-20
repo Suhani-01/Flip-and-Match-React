@@ -129,10 +129,10 @@ function CardsContainer({
 
           setTimeout(() => {
             win();
-          }, 500);
+          }, 100);
         }
         setLockBoard(false);
-      }, 600);
+      }, 500);
     }
 
     //not matched
@@ -176,16 +176,18 @@ function CardsContainer({
       <audio ref={matchSound} src="/sounds/matched.m4a" preload="auto" />
       {shuffledCards.length === 0 && <Loading />}
       {winner ? (
-        <Winner time={time} flips={flips} levelNumber={levelNumber} />
+        <Winner time={time} flips={flips} levelNumber={levelNumber} restart={initializeGame} />
       ) : gameOver ? (
         <Looser restart={initializeGame} />
       ) : (
+        <div className="card-outermost-container">
         <div
           className={`card-outer-container card-outer-container-${levelNumber}`}
         >
           {shuffledCards.map((card) => (
             <Card key={card.key} imageSource={card} handler={flipTheCard} />
           ))}
+        </div>
         </div>
       )}
 

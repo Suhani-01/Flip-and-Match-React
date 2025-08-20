@@ -8,20 +8,14 @@ import { createContext, useState } from "react";
 const LevelProvider = createContext(null);
 
 function App() {
-  const [level1Enabled, setLevel1Enabled] = useState(true); // Level 1 initially enabled
-  const [level2Enabled, setLevel2Enabled] = useState(false); // Level 2 initially disabled
-  const [level3Enabled, setLevel3Enabled] = useState(false); // Level 3 in
+  const [levelsEnabled, setLevelsEnabled] = useState([true, false, false, false, false, false]);
+
 
   return (
     <>
       <LevelProvider.Provider
         value={{
-          level1Enabled,
-          level2Enabled,
-          level3Enabled,
-          setLevel1Enabled,
-          setLevel2Enabled,
-          setLevel3Enabled,
+          levelsEnabled, setLevelsEnabled
         }}
       >
         <h1 className="main-heading">Flip & Match</h1>

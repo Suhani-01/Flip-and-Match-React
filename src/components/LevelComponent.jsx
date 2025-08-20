@@ -18,13 +18,22 @@ function LevelComponent() {
   useEffect(() => {
     if (levelNumber === 1) {
       console.log("level 1 opened")
-      setUniqueCards(3);
+      setUniqueCards(2);
     } else if (levelNumber === 2) {
       console.log("level 2 opened")
-      setUniqueCards(6);
+      setUniqueCards(3);
     } else if(levelNumber===3){
       console.log("level 3 opened")
+      setUniqueCards(6);
+    }else if(levelNumber===4){
+      console.log("level 4 opened")
       setUniqueCards(8);
+    }else if(levelNumber===5){
+      console.log("level 5 opened")
+      setUniqueCards(10);
+    }else if(levelNumber===6){
+      console.log("level 6 opened")
+      setUniqueCards(12);
     }else{
       console.log("error occured")
     }
@@ -34,6 +43,7 @@ function LevelComponent() {
     <div className='game-container'>
         
         <h2> Level {levelNumber} </h2>
+        
         <Header time={time} flips={flips}/>
         <CardsContainer time={time} flips={flips} setFlips={setFlips} setTime={setTime} uniqueCards={uniqueCards} levelNumber={levelNumber}/>
     </div>
