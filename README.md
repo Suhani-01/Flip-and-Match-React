@@ -14,7 +14,7 @@
 
 ## Features
 
-* **3 Levels** with increasing number of cards.
+* **6 Levels** with increasing number of cards.
 * **Timer** to complete each level.
 * **Flip Counter** to track moves.
 * **Audio Feedback** for matches and non-matches.
