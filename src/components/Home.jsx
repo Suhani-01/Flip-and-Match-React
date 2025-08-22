@@ -28,8 +28,7 @@ function Home() {
             <p>Stay sharp, focus hard, and most importantly... have fun!</p>
           </div>
           <button className="button-type-one" onClick={handleStart}>
-            {" "}
-            Start{" "}
+            <i class="fa-solid fa-circle-play"></i>
           </button>
         </div>
     </>
